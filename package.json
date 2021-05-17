@@ -20,6 +20,7 @@
     "@vitejs/plugin-vue": "^1.2.1",
     "@vue/compiler-sfc": "^3.0.5",
     "babel-loader": "^8.2.2",
+    "sass": "^1.32.13",
     "vite": "^2.1.5",
     "vue-loader": "^16.2.0"
   }
