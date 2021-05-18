@@ -2,3 +2,7 @@
 @import './base/colors';
 @import './base/fonts';
 @import './base/variables';
+
+* {
+  font-family: $main-font;
+}
