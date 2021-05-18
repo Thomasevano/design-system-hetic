@@ -1,0 +1,63 @@
+@import '../styles/main';
+
+.storybook-text-field {
+  color: $secondary-text-color;
+  font-family: $main-font;
+  font-size: $font-size-extra-small;
+  div {
+    font-weight: 500;
+    margin-bottom: 4px;
+  }
+  input {
+    color: $secondary-text-color;
+    display: block;
+    padding: $tiny-space $small-space;
+    border: 1px solid #ced4da;
+    border-radius: $radius-regular;
+  }
+}
+
+
+.storybook-text-field--default {
+  input {
+    background-color: #fff;
+  }
+}
+
+.storybook-text-field--disabled {
+  color: $btn-disbaled;
+  input {
+    color: $placeholder-color-disabled;
+    border-color: $btn-disbaled;
+    background-color: $placeholder-color-disabled;
+  }
+}
+
+.storybook-text-field--focus {
+  input {
+    background-color: transparent;
+    &:focus {
+      color: $primary-text-color;
+      background-color: $secondary-color;
+      border-color: $primary-validation-color;
+      outline: 0;
+    }
+  }
+}
+
+
+.storybook-text-field--validated {
+  color: $primary-validation-color;
+  input {
+    background-color: $secondary-color;
+    border-color: $primary-validation-color;
+  }
+}
+
+.storybook-text-field--error {
+  color: $primary-error-color;
+  input {
+    background-color: $secondary-error-color;
+    border-color: $primary-error-color;
+  }
+}
