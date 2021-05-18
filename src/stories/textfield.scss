@@ -8,6 +8,12 @@
     font-weight: 500;
     margin-bottom: 4px;
   }
+  .msg-container {
+    width: 203px;
+    .msg-feedback {
+      display: none;
+    }
+  }
   input {
     color: $secondary-text-color;
     display: block;
@@ -51,11 +57,17 @@
   input {
     background-color: $secondary-color;
     border-color: $primary-validation-color;
+    background-repeat: no-repeat;
+    background-position: right .75rem center;
   }
 }
 
 .storybook-text-field--error {
   color: $primary-error-color;
+  .msg-feedback {
+    float: right;
+    display: inline-block!important;
+  }
   input {
     background-color: $secondary-error-color;
     border-color: $primary-error-color;

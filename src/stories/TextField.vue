@@ -1,13 +1,17 @@
 <template>
-  <label :class="classes">
-    <div>{{ label }}</div>
-    <input type="text" :style="style" :placeholder="placeholder" :disabled="disabled">
-  </label>
-
+  <div :class="classes">
+    <Form class="msg-container">
+      <label>{{ label }}</label>
+      <ErrorMessage class="msg-feedback" name="field" />
+      <Field name="field" :style="style" :placeholder="placeholder" :disabled="disabled" :rules="isRequired" />
+    </Form>
+  </div>
 </template>
 
 <script>
 import './textfield.scss';
+
+import { Field, Form, ErrorMessage } from 'vee-validate';
 import { reactive, computed } from 'vue';
 
 export default {
@@ -49,6 +53,21 @@ export default {
         backgroundColor: props.backgroundColor,
       })),
     }
+  },
+
+  components: {
+    Field,
+    Form,
+    ErrorMessage,
+  },
+  methods: {
+    isRequired(value) {
+      if (value && value.trim()) {
+        return true;
+      }
+
+      return 'This is required';
+    },
   },
 };
 </script>
