@@ -10,8 +10,4 @@
 </script>
 
 <style lang="scss">
-@import './styles/main.scss';
-
-#app {
-}
 </style>

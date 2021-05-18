@@ -1,3 +1,18 @@
 <template>
-  <h1>Home!!</h1>
+  <my-button label="Se connecter" disabled primary/>
 </template>
+
+<script>
+import MyButton from '../stories/Button.vue';
+export default {
+  name: 'Home',
+
+  components: { MyButton },
+}
+
+</script>
+
+<style scoped lang="scss">
+@import '../styles/main.scss';
+
+</style>
