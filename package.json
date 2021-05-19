@@ -9,6 +9,7 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
+    "vee-validate": "^4.4.0-alpha.2",
     "vue": "^3.0.5",
     "vue-router": "^4.0.8"
   },
