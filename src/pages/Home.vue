@@ -1,5 +1,5 @@
 <template>
-  <my-button label="Se connecter" disabled primary/>
+  <my-button label="Se connecter" typeButton="lean" disabled/>
 </template>
 
 <script>
