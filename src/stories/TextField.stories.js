@@ -56,4 +56,5 @@ Error.args = {
   typeInput: 'error',
   label: 'TextField',
   placeholder: 'Placeholder',
+  image: 'danger'
 };

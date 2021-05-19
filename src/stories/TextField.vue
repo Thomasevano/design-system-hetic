@@ -4,6 +4,9 @@
       <label>{{ label }}</label>
       <ErrorMessage class="msg-feedback" name="field" />
       <Field name="field" :style="style" :placeholder="placeholder" :disabled="disabled" :rules="isRequired" />
+      <span>
+        <img src="" alt="">
+      </span>
     </Form>
   </div>
 </template>
@@ -36,6 +39,12 @@ export default {
         return ['default', 'disabled', 'focus', 'validated', 'error'].indexOf(value) !== -1;
       },
     },
+    backgroundColor: {
+      type: String,
+    },
+    borderColor: {
+      type: String,
+    },
   },
 
   setup(props) {
@@ -51,6 +60,7 @@ export default {
       })),
       style: computed(() => ({
         backgroundColor: props.backgroundColor,
+        borderColor: props.borderColor,
       })),
     }
   },
@@ -66,7 +76,7 @@ export default {
         return true;
       }
 
-      return 'This is required';
+      return 'This is empty';
     },
   },
 };
