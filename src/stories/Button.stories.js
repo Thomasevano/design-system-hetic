@@ -4,9 +4,8 @@ export default {
   title: 'Example/Button',
   component: MyButton,
   argTypes: {
-    backgroundColor: { control: 'color' },
-    size: { control: { type: 'select', options: ['small', 'medium', 'large'] } },
     onClick: {},
+    Disabled: { checkBox: false },
   },
 };
 
@@ -32,14 +31,8 @@ Secondary.args = {
   label: 'Button',
 };
 
-export const Large = Template.bind({});
-Large.args = {
-  size: 'large',
+export const Disabled = Template.bind({});
+Disabled.args = {
+  disabled: true,
   label: 'Button',
-};
-
-export const Small = Template.bind({});
-Small.args = {
-  size: 'small',
-  label: 'Button',
-};
+}

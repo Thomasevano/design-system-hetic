@@ -18,15 +18,10 @@ export default {
       type: Boolean,
       default: false,
     },
-    size: {
-      type: String,
-      validator: function (value) {
-        return ['small', 'medium', 'large'].indexOf(value) !== -1;
-      },
-    },
-    backgroundColor: {
-      type: String,
-    },
+    disabled: {
+      type: Boolean,
+      default: false,
+    }
   },
 
   emits: ['click'],
@@ -36,12 +31,10 @@ export default {
     return {
       classes: computed(() => ({
         'storybook-button': true,
-        'storybook-button--primary': props.primary,
-        'storybook-button--secondary': !props.primary,
-        [`storybook-button--${props.size || 'medium'}`]: true,
-      })),
-      style: computed(() => ({
-        backgroundColor: props.backgroundColor,
+        'storybook-button--primary': props.primary && !props.disabled,
+        'storybook-button--secondary': !props.primary && !props.disabled,
+        'storybook-button--primary__disabled': props.primary && props.disabled,
+        'storybook-button--secondary__disabled': !props.primary && props.disabled,
       })),
       onClick() {
         emit('click');

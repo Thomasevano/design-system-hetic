@@ -31,10 +31,10 @@
 }
 
 .storybook-text-field--disabled {
-  color: $btn-disbaled;
+  color: $btn-disabled;
   input {
     color: $placeholder-color-disabled;
-    border-color: $btn-disbaled;
+    border-color: $btn-disabled;
     background-color: $placeholder-color-disabled;
   }
 }
