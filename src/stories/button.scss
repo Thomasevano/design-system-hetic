@@ -28,6 +28,7 @@
   border: 1px solid $btn-primary-color;
   &:hover {
     transform: translateY(-1px);
+    transition: all 0.2s ease-in-out;
     box-shadow: $primary-shadow;
   }
   &__disabled {
@@ -37,5 +38,34 @@
       transform: none;
       box-shadow: none;
     }
+  }
+}
+
+.storybook-button--lean {
+  border: 0px;
+  border-radius: 0;
+  color: $btn-primary-color;
+  background-color: $btn-secondary-color;
+  display: inline-flex;
+  align-self: center;
+  padding: 0;
+  &:hover {
+    border-bottom: 1px solid $btn-primary-color;
+  }
+  svg {
+    fill: $primary-color;
+    bottom:2px;
+    position: relative;
+    margin-left: $tiny-space;
+  }
+  &__disabled {
+    color: $btn-disabled;
+    svg {
+      fill: $btn-disabled;
+    }
+    &:hover {
+      border-bottom: 0px;
+    }
+    cursor: not-allowed;
   }
 }
