@@ -1,19 +1,17 @@
 <template>
   <div :class="classes">
-    <Form class="msg-container">
+    <Form class="input-group">
       <label>{{ label }}</label>
-      <ErrorMessage class="msg-feedback" name="field" />
+      <ErrorMessage  v-if="typeInput == 'error'" class="msg-feedback" name="field" />
       <Field name="field" :style="style" :placeholder="placeholder" :disabled="disabled" :rules="isRequired" />
-      <span>
-        <img src="" alt="">
-      </span>
+      <span class="icon-input" v-if="iconInput == 'danger'"><img src="./assets/icon-danger.svg" alt=""></span>
+      <span class="icon-input" v-if="iconInput == 'check'"><img src="./assets/icon-check.svg" alt=""></span>
     </Form>
   </div>
 </template>
 
 <script>
 import './textfield.scss';
-
 import { Field, Form, ErrorMessage } from 'vee-validate';
 import { reactive, computed } from 'vue';
 
@@ -45,6 +43,12 @@ export default {
     borderColor: {
       type: String,
     },
+    iconInput: {
+      type: String,
+      validator: function (value) {
+        return ['danger', 'check'].indexOf(value) !== -1;
+      }
+    }
   },
 
   setup(props) {

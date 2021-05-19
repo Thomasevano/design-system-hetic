@@ -8,15 +8,20 @@
     font-weight: 500;
     margin-bottom: 4px;
   }
-  .msg-container {
-    width: 203px;
-    .msg-feedback {
-      display: none;
-    }
+  .input-group {
+    position: relative;
+  }
+  .icon-input {
+    position: absolute;
+    width: auto;
+    bottom: $tiny-space;
+    right: $tiny-space;
+    margin-top: 0;
   }
   input {
     color: $secondary-text-color;
     display: block;
+    width: 100%;
     padding: $tiny-space $small-space;
     border: 1px solid #ced4da;
     border-radius: $radius-regular;
@@ -66,7 +71,7 @@
   color: $primary-error-color;
   .msg-feedback {
     float: right;
-    display: inline-block!important;
+    display: inline-block;
   }
   input {
     background-color: $secondary-error-color;

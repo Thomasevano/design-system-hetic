@@ -49,6 +49,7 @@ Validated.args = {
   typeInput: 'validated',
   label: 'TextField',
   placeholder: 'Placeholder',
+  iconInput: 'check'
 };
 
 export const Error = Template.bind({});
@@ -56,5 +57,5 @@ Error.args = {
   typeInput: 'error',
   label: 'TextField',
   placeholder: 'Placeholder',
-  image: 'danger'
+  iconInput: 'danger'
 };
