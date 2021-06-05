@@ -1,0 +1,48 @@
+$main-font: 'Roboto', Arial, sans-serif;
+
+$font-size-large-title: 48px;
+$font-size-regular-title: 36px;
+$font-size-small-title: 24px;
+$font-size-large: 19px;
+$font-size-regular: 17px;
+$font-size-small: 14px;
+$font-size-extra-small: 11px;
+
+$font-medium: 500;
+$font-normal:400;
+
+@mixin title-1 {
+  font-size: 48px;
+  font-weight: 500;    
+  line-height: 56px;
+}
+
+@mixin title-2 {
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 42px;
+}
+
+@mixin title-3 {
+  font-size: 24px;
+  font-weight: normal;
+  line-height: 28px;
+}
+
+@mixin text-1 {
+  font-size: 19px;
+  font-weight: normal;
+  line-height: 22px;
+}
+
+@mixin text-2 {
+  font-size: 17px;
+  font-weight: normal;
+  line-height: 20px;
+}
+
+@mixin text-3 {
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 16px;
+}

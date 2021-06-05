@@ -10,11 +10,11 @@ $secondary-text-color: #494949;
 $primary-error-color: #EB8C95;
 $secondary-error-color: #FEF1F2;
 
-$primary-validation-color: #5F30E2;
-$secondary-validation-color: #F5F1FF;
+$primary-validation-color: $primary-color;
+$secondary-validation-color: $secondary-color;
 
-$btn-primary-color: #5F30E2;
-$btn-secondary-color: #FFFFFF;
+$btn-primary-color: $primary-color;
+$btn-secondary-color: $blank-color;
 
 $btn-disabled: #AEAEAE;
 $placeholder-color-disabled: #EDEDF0
