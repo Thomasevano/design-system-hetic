@@ -1,0 +1,44 @@
+@import '../../styles/main.scss';
+
+.button {
+  @include text-2;
+  cursor: pointer;
+  display: inline-block;
+  padding: $tiny-space $regular-space;
+  border-radius: $radius-regular;
+  width: 100%;
+}
+
+.button--primary {
+  color: $btn-secondary-color;
+  background-color: $btn-primary-color;
+  &__disabled {
+    color: $btn-secondary-color;
+    background-color: $btn-disabled;
+  }
+}
+
+.button--secondary {
+  color: $btn-primary-color;
+  background-color: $btn-secondary-color;
+  &__disabled {
+    color: $btn-disabled;
+  }
+}
+
+.button--primary, .button--secondary {
+  border: 1px solid $btn-primary-color;
+  &:hover {
+    transform: translateY(-1px);
+    transition: all 0.2s ease-in-out;
+    box-shadow: $primary-shadow;
+  }
+  &__disabled {
+    border: 1px solid $btn-disabled;
+    cursor: not-allowed;
+    &:hover {
+      transform: none;
+      box-shadow: none;
+    }
+  }
+}

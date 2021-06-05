@@ -1,13 +1,16 @@
 <template>
-  <my-button label="Se connecter" typeButton="lean" disabled/>
+  <my-button text="Se connecter" typeButton="primary"/>
+  <my-button text="Se connecter" typeButton="secondary"/>
+  <link-button text="Reset password"/>
 </template>
 
 <script>
-import MyButton from '../stories/Button.vue';
+import MyButton from '../components/Button/Button.vue';
+import LinkButton from '../components/LinkButton/LinkButton.vue';
 export default {
   name: 'Home',
 
-  components: { MyButton },
+  components: { MyButton, LinkButton },
 }
 
 </script>
