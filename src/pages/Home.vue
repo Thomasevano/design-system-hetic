@@ -1,16 +1,22 @@
 <template>
   <my-button text="Se connecter" typeButton="primary"/>
-  <my-button text="Se connecter" typeButton="secondary"/>
   <link-button text="Reset password"/>
+  <text-field label="Label" placeholder="Placeholder" inputState="validated"/>
 </template>
 
 <script>
 import MyButton from '../components/Button/Button.vue';
 import LinkButton from '../components/LinkButton/LinkButton.vue';
+import TextField from '../components/TextField/TextField.vue';
+
 export default {
   name: 'Home',
 
-  components: { MyButton, LinkButton },
+  components: { 
+    MyButton,
+    LinkButton,
+    TextField 
+  },
 }
 
 </script>

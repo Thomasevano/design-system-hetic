@@ -1,0 +1,58 @@
+@import '../../styles/main.scss';
+
+.text-field {
+  color: $secondary-text-color;
+  .label-group {
+    @include text-4--bold;
+    display: inline-flex;
+    align-items: center;
+    label {
+      margin-left: $extra-tiny-space;
+    }
+  }
+  input {
+    color: $secondary-text-color;
+    display: block;
+    width: 100%;
+    padding: $tiny-space $small-space;
+    border: 1px solid $surface-color;
+    border-radius: $radius-regular;
+    background-color: $blank-color;
+    &:focus {
+      background-color: transparent;
+      color: $primary-text-color;
+      background-color: $secondary-color;
+      border-color: $primary-validation-color;
+      outline: 0;
+    }
+  }
+}
+
+.text-field--disabled {
+  color: $btn-disabled;
+  input {
+    color: $placeholder-color-disabled;
+    border-color: $btn-disabled;
+    background-color: $placeholder-color-disabled;
+    cursor: not-allowed;
+    
+  }
+}
+
+.text-field--validated {
+  color: $primary-validation-color;
+  input {
+    background-color: $secondary-color;
+    border-color: $primary-validation-color;
+    background-repeat: no-repeat;
+    background-position: right .75rem center;
+  }
+}
+
+.text-field--error {
+  color: $primary-error-color;
+  input {
+    background-color: $secondary-error-color;
+    border-color: $primary-error-color;
+  }
+}
