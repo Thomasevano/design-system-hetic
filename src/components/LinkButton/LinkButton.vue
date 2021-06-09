@@ -1,5 +1,5 @@
 <template>
-  <a href="" :class="classes">
+  <a :href="linkUrl" :class="classes">
     {{ text }}
     <arrow-icon/>  
   </a>
@@ -11,7 +11,7 @@ import ArrowIcon from '../ArrowIcon.vue';
 import { reactive, computed } from 'vue';
 
 export default {
-  name: 'link-button',
+  name: 'LinkButton',
 
   components: { ArrowIcon },
 
@@ -23,6 +23,10 @@ export default {
     disabled: {
       type: Boolean,
       default: false,
+    },
+    linkUrl: {
+      type: String,
+      required: true,
     },
   },
 

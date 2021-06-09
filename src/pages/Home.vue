@@ -1,6 +1,6 @@
 <template>
   <my-button text="Se connecter" typeButton="primary"/>
-  <link-button text="Reset password"/>
+  <LinkButton text="Reset password" linkUrl="/register"/>
   <text-field label="Label" placeholder="Placeholder" inputState="validated"/>
 </template>
 
