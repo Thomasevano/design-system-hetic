@@ -4,7 +4,7 @@
   @include text-2;
   color: $btn-primary-color;
   display: inline-flex;
-  align-self: center;
+  align-items: center;
   text-decoration: none;
   &:hover {
     border-bottom: 1px solid $btn-primary-color;
@@ -12,7 +12,6 @@
   svg {
     fill: $primary-color;
     bottom: 0.25rem;
-    position: relative;
     margin-left: $tiny-space;
   }
   &__disabled {

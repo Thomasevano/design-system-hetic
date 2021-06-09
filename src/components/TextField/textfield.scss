@@ -2,12 +2,16 @@
 
 .text-field {
   color: $secondary-text-color;
+  margin-bottom: $small-space;
   .label-group {
     @include text-4--bold;
     display: inline-flex;
     align-items: center;
-    label {
-      margin-left: $extra-tiny-space;
+    margin-bottom: $extra-tiny-space;
+    span {
+      width: 16px;
+      height: 16px;
+      margin-right: $extra-tiny-space;
     }
   }
   input {

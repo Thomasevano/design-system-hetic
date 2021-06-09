@@ -1,28 +1,27 @@
 <template>
   <div :class="classes">
-    <Form class="input-group">
+    <div class="input-group">
       <div class="label-group">
         <span v-if="inputState == 'error'"><img src="../../assets/icon-danger.svg" alt=""></span>
         <span v-if="inputState == 'validated'"><img src="../../assets/icon-check.svg" alt=""></span>
         <label>{{ label }}</label>
-        <ErrorMessage  v-if="inputState == 'error'" class="msg-feedback" name="field" />
+        <ErrorMessage v-if="inputState == 'error'" class="msg-feedback" name="field" />
       </div>
-      <Field name="field" :style="style" :placeholder="placeholder" :rules="isRequired" />
-    </Form>
+      <Field name="field" :placeholder="placeholder" :rules="isRequired" />
+    </div>
   </div>
 </template>
 
 <script>
 import './textfield.scss';
-import { Field, Form, ErrorMessage } from 'vee-validate';
+import { Field, ErrorMessage } from 'vee-validate';
 import { reactive, computed } from 'vue';
 
 export default {
-  name: 'text-field',
+  name: 'TextField',
 
   components: {
     Field,
-    Form,
     ErrorMessage,
   },
 

@@ -1,7 +1,7 @@
 <template>
   <my-button text="Se connecter" typeButton="primary"/>
   <LinkButton text="Reset password" linkUrl="/register"/>
-  <text-field label="Label" placeholder="Placeholder" inputState="validated"/>
+  <TextField label="Label" placeholder="Placeholder" inputState="validated"/>
 </template>
 
 <script>
