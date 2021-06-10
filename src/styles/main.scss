@@ -8,3 +8,27 @@
 html {
   font-family: $main-font;
 }
+
+.form-page {
+  padding: 100px $small-space;
+
+  .title {
+    @include title-2;
+  }
+  .input-group {
+    margin-bottom: $tiny-space;
+  }
+}
+
+@media (min-width: 767px) {
+  html {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .form-page {
+    padding: 0;
+    width: 360px;
+  }
+}
