@@ -28,6 +28,12 @@ html {
       margin-top: $large-space;
     }
   }
+  .reset-password-form {
+    margin-top: $regular-space;
+    .button--secondary {
+      margin-top: $tiny-space;
+    }
+  }
 }
 
 @media (min-width: 767px) {
@@ -40,5 +46,8 @@ html {
   .form-page {
     padding: 0;
     width: 360px;
+    .reset-password-form {
+      margin-top: 2 * $small-space;
+    }
   }
 }
