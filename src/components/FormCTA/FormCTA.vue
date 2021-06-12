@@ -6,7 +6,6 @@
 </template>
 
 <script>
-import './formcta.scss';
 import LinkButton from '../LinkButton/LinkButton.vue';
 
 export default {

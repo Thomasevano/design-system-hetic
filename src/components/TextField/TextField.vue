@@ -13,7 +13,6 @@
 </template>
 
 <script>
-import './textfield.scss';
 import { Field, ErrorMessage } from 'vee-validate';
 import { reactive, computed } from 'vue';
 

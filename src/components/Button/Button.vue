@@ -5,7 +5,6 @@
 </template>
 
 <script>
-import './button.scss';
 import { reactive, computed } from 'vue';
 
 export default {

@@ -4,6 +4,10 @@
 @import './base/radius';
 @import './base/shadow';
 @import './base/spaces';
+@import '../components/Button/button.scss';
+@import '../components/FormCTA/formcta.scss';
+@import '../components/LinkButton/linkbutton.scss';
+@import '../components/TextField/textfield.scss';
 
 html {
   font-family: $main-font;
@@ -20,8 +24,8 @@ html {
   }
 
   .login-form {
-    .link-button {
-      margin-bottom: $large-space;
+    .button--primary {
+      margin-top: $large-space;
     }
   }
 }

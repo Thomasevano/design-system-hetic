@@ -6,7 +6,6 @@
 </template>
 
 <script>
-import './linkbutton.scss';
 import ArrowIcon from '../ArrowIcon.vue';
 import { reactive, computed } from 'vue';
 
