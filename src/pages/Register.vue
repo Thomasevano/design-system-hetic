@@ -6,14 +6,14 @@
       <TextField label="Email" placeholder="Email" inputState="error" />
       <TextField label="Password" placeholder="Password" />
       <TextField label="Confirm password" placeholder="Confirm your password" />
-      <my-button text="Create your account" typeButton="primary" />
+      <Button text="Create your account" typeButton="primary" />
     </Form>
   </div>
 </template>
 
 <script>
 import '../styles/main.scss';
-import MyButton from "../components/Button/Button.vue";
+import Button from "../components/Button/Button.vue";
 import TextField from "../components/TextField/TextField.vue";
 import FormCTA from "../components/FormCTA/FormCTA.vue";
 import { Form } from 'vee-validate';
@@ -22,7 +22,7 @@ export default {
   name: "Register",
 
   components: {
-    MyButton,
+    Button,
     TextField,
     FormCTA,
     Form,

@@ -5,15 +5,15 @@
       <TextField label="Email" placeholder="Email" inputState="error" />
       <TextField label="Password" placeholder="Password" />
       <TextField label="Confirm password" placeholder="Confirm your password" />
-      <my-button text="Confirm" typeButton="primary" />
-      <my-button text="Back" typeButton="secondary" />
+      <Button text="Confirm" typeButton="primary" />
+      <Button text="Back" typeButton="secondary" />
     </Form>
   </div>
 </template>
 
 <script>
 import '../styles/main.scss';
-import MyButton from "../components/Button/Button.vue";
+import Button from "../components/Button/Button.vue";
 import TextField from "../components/TextField/TextField.vue";
 import { Form } from 'vee-validate';
 
@@ -21,7 +21,7 @@ export default {
   name: "ResetPassword",
 
   components: {
-    MyButton,
+    Button,
     TextField,
     Form,
   },
