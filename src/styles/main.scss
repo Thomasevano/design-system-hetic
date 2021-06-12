@@ -18,6 +18,12 @@ html {
   .input-group {
     margin-bottom: $tiny-space;
   }
+
+  .login-form {
+    .link-button {
+      margin-bottom: $large-space;
+    }
+  }
 }
 
 @media (min-width: 767px) {
