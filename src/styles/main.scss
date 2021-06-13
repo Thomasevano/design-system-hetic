@@ -13,6 +13,13 @@ html {
   font-family: $main-font;
 }
 
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100px;
+}
+
 .form-page {
   padding: 100px $small-space;
 
@@ -34,6 +41,12 @@ html {
       margin-top: $tiny-space;
     }
   }
+
+  .register-form, .reset-password-form {
+    .button--primary {
+      margin-top: $tiny-space;
+    }
+  }
 }
 
 @media (min-width: 767px) {
@@ -48,6 +61,11 @@ html {
     width: 360px;
     .reset-password-form {
       margin-top: 2 * $small-space;
+    }
+    .register-form, .reset-password-form {
+      .button--primary {
+        margin-top: 2* $small-space;
+      }
     }
   }
 }
