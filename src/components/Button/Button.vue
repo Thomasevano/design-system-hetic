@@ -1,5 +1,5 @@
 <template>
-  <button type="button" :class="classes" @click="onClick">
+  <button :class="classes">
     {{ text }}
   </button>
 </template>
@@ -29,7 +29,7 @@ export default {
 
   emits: ['click'],
 
-  setup(props, { emit }) {
+  setup(props) {
     props = reactive(props);
     return {
       classes: computed(() => ({
@@ -39,9 +39,6 @@ export default {
         'button--primary__disabled': props.typeButton === 'primary' && props.disabled,
         'button--secondary__disabled': props.typeButton === 'secondary' && props.disabled,
       })),
-      onClick() {
-        emit('click');
-      }
     }
   },
 }
