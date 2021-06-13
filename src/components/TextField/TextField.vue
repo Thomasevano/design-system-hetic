@@ -5,9 +5,9 @@
         <span v-if="inputState == 'error'"><img src="../../assets/icon-danger.svg" alt=""></span>
         <span v-if="inputState == 'validated'"><img src="../../assets/icon-check.svg" alt=""></span>
         <label>{{ label }}</label>
-        <ErrorMessage v-if="inputState == 'error'" class="msg-feedback" name="field" />
+        <ErrorMessage v-if="inputState == 'error'" class="msg-feedback" :name="name" />
       </div>
-      <Field name="field" :placeholder="placeholder" :rules="isRequired" />
+      <Field :name="name" :placeholder="placeholder" :type="type" :rules="validationRules" />
     </div>
   </div>
 </template>
@@ -29,6 +29,12 @@ export default {
       type: String,
       required: true,
     },
+    name : {
+      type: String,
+    },
+    type: {
+      type: String,
+    },
     placeholder: {
       type: String,
       required: true,
@@ -43,6 +49,9 @@ export default {
         return ['validated', 'error'].indexOf(value) !== -1;
       },
     },
+    validationRules: {
+      type: Function,
+    }
   },
 
   setup(props) {
@@ -57,14 +66,5 @@ export default {
     }
   },
 
-  methods: {
-    isRequired(value) {
-      if (value && value.trim()) {
-        return true;
-      }
-
-      return ': This is empty';
-    },
-  },
 };
 </script>
