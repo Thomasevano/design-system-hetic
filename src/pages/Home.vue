@@ -1,8 +1,8 @@
 <template>
   <div class="home">
-    <Link text="Reset password" linkUrl="/reset"/>
-    <Link text="Login" linkUrl="/login"/>
-    <Link text="Register" linkUrl="/register"/>
+    <Link text="Reset password" url="/reset"/>
+    <Link text="Login" url="/login"/>
+    <Link text="Register" url="/register"/>
   </div>
 </template>
 
