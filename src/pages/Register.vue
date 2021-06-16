@@ -12,7 +12,6 @@
 </template>
 
 <script>
-import '../styles/main.scss';
 import Button from "../components/Button/Button.vue";
 import TextField from "../components/TextField/TextField.vue";
 import FormCTA from "../components/FormCTA/FormCTA.vue";
