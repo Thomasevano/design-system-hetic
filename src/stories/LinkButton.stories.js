@@ -1,9 +1,9 @@
-import Button from '../components/Button/Button.vue';
+import LinkButton from '../components/LinkButton/LinkButton.vue';
 import '../styles/main.scss';
 
 export default {
-  title: 'Components/Button',
-  component: Button,
+  title: 'Components/LinkButton',
+  component: LinkButton,
   argTypes: {
     Click: {},
     Disabled: { checkBox: false },
@@ -13,29 +13,29 @@ export default {
 
 const Template = (args) => ({
   // Components used in your story `template` are defined in the `components` object
-  components: { Button },
+  components: { LinkButton },
   // The story's `args` need to be mapped into the template through the `setup()` method
   setup() {
     return { args };
   },
   // And then the `args` are bound to your component with `v-bind="args"`
-  template: '<Button v-bind="args" />',
+  template: '<Link-button v-bind="args" />',
 });
 
 export const Primary = Template.bind({});
 Primary.args = {
   typeButton: 'primary',
-  label: 'Button',
+  text: 'GreatestLink',
 };
 
 export const Secondary = Template.bind({});
 Secondary.args = {
   typeButton: 'secondary',
-  label: 'Button',
+  text: 'GreatestLink',
 };
 
 export const Disabled = Template.bind({});
 Disabled.args = {
   disabled: true,
-  label: 'Button',
+  text: 'GreatestLink',
 }
