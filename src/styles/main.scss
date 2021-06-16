@@ -34,6 +34,10 @@ html {
     .button--primary {
       margin-top: $large-space;
     }
+    .reset-password-link {
+      display: flex;
+      justify-content: flex-end;
+    }
   }
   .reset-password-form {
     margin-top: $regular-space;

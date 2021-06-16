@@ -5,7 +5,9 @@
       <FormCTA message="Not signed up ?" linkText="Register" linkUrl="/register" />
       <TextField label="Email" placeholder="Email" name="email" type="email"/>
       <TextField label="Password" placeholder="Password" name="password" type="password"/>
-      <LinkButton text="Reset password" linkUrl="/reset"/>
+      <div class="reset-password-link">
+        <LinkButton text="Reset password" linkUrl="/reset"/>
+      </div>
       <Button text="Login" typeButton="primary" />
     </Form>
   </div>
