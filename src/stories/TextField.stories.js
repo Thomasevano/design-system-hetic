@@ -1,8 +1,9 @@
 import TextField from '../components/TextField/TextField.vue';
+import '../styles/main.scss';
 
 export default {
-  title: 'Example/TextField',
-  component: MyTextField,
+  title: 'Components/TextField',
+  component: TextField,
   argTypes: {
     backgroundColor: { control: 'color' },
     borderColor: { control: 'color' },
@@ -19,7 +20,7 @@ const Template = (args) => ({
     return { args };
   },
   // And then the `args` are bound to your component with `v-bind="args"`
-  template: '<my-text-field v-bind="args" />',
+  template: '<Text-field v-bind="args" />',
 });
 
 export const Default = Template.bind({});
