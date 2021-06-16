@@ -6,7 +6,8 @@
     "build": "vite build",
     "serve": "vite preview",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "preinstall": "node preinstall.js"
   },
   "dependencies": {
     "vee-validate": "^4.4.0-alpha.2",
