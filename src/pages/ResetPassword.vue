@@ -1,10 +1,10 @@
 <template>
   <div class="form-page">
     <h1 class="title">Reset Password</h1>
-    <Form class="reset-password-form" @submit="onSubmit">
-      <TextField label="Email" placeholder="Email" name="email" type="email" :inputState="emailState" :validationRules="validateEmail"/>
-      <TextField label="Password" placeholder="Password" name="password" type="password" :inputState="passwordState" :validationRules="validatePassword"/>
-      <TextField label="Confirm password" placeholder="Confirm your password" name="confirmPassword" type="password" :inputState="confirmPasswordState" :validationRules="validateConfirmPassword"/>
+    <Form class="reset-password-form" @submit="onSubmit" :validation-schema="resetPasswordSchema">
+      <TextField label="Email" placeholder="Email" name="email" type="email"/>
+      <TextField label="Password" placeholder="Password" name="password" type="password"/>
+      <TextField label="Confirm password" placeholder="Confirm your password" name="confirmPassword" type="password"/>
       <Button text="Confirm" typeButton="primary" />
       <Button text="Back" typeButton="secondary" />
     </Form>
@@ -16,6 +16,7 @@ import '../styles/main.scss';
 import Button from "../components/Button/Button.vue";
 import TextField from "../components/TextField/TextField.vue";
 import { Form } from 'vee-validate';
+import * as Yup from "yup";
 
 export default {
   name: "ResetPassword",
@@ -26,64 +27,21 @@ export default {
     Form,
   },
 
-  data() {
-    let emailState;
-    let passwordState;
-    let confirmPasswordState;
+  setup() {
+    function onSubmit(values) {
+      alert(JSON.stringify(values, null, 2));
+    }
+
+  const resetPasswordSchema = Yup.object().shape({
+      email: Yup.string().email().required(),
+      password: Yup.string().matches(/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$/, "Password must be at least 8 characters and contains uppercase, lowercase and special character").required(),
+      confirmPassword: Yup.string().required().oneOf([Yup.ref("password")], "Passwords do not match")
+    });
 
     return {
-      emailState,
-      passwordState,
-      confirmPasswordState,
-    }
-  },
-
-  methods: {
-    onSubmit(values) {
-      alert(values);
-    },
-    validateEmail(value) {
-      if (!value) {
-        this.emailState = 'error';
-        return `: This field is required`;
-      }
-
-      if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value)) {
-        this.emailState = 'error';
-        return ': This field must be a valid email';
-      }
-
-      this.emailState = 'validated'
-      return true;
-    },
-    validatePassword(value) {
-      if (!value) {
-        this.passwordState = 'error';
-        return ': This field is required';
-      }
-
-      if(!/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$/i.test(value)) {
-        this.passwordState = 'error';
-        return ': This field must be a valid password';
-      }
-
-      this.passwordState = 'validated'
-      return true;
-    },
-    validateConfirmPassword(value) {
-      if (!value) {
-        this.confirmPasswordState = 'error';
-        return ': This field is required';
-      }
-
-      if(!/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$/i.test(value)) {
-        this.confirmPasswordState = 'error';
-        return ': This field must be a valid password';
-      }
-
-      this.confirmPasswordState = 'validated'
-      return true;
-    }
-  },
+      onSubmit,
+      resetPasswordSchema,
+    };
+  }
 };
 </script>

@@ -28,7 +28,7 @@
   }
 }
 
-.text-field--disabled {
+.text-field.disabled {
   color: $btn-disabled;
   input {
     color: $placeholder-color-disabled;
@@ -39,7 +39,7 @@
   }
 }
 
-.text-field--validated {
+.text-field.validated {
   color: $primary-validation-color;
   input {
     background-color: $secondary-color;
@@ -49,7 +49,7 @@
   }
 }
 
-.text-field--error {
+.text-field.error {
   color: $primary-error-color;
   input {
     background-color: $secondary-error-color;

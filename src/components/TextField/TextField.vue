@@ -1,28 +1,22 @@
 <template>
-  <div :class="classes">
+  <div class="text-field" :class="{ error: !!errorMessage, validated: meta.valid, disabled: disabled}">
     <div class="input-group">
       <div class="label-group">
-        <span v-if="inputState == 'error'"><img src="../../assets/icon-danger.svg" alt=""></span>
-        <span v-if="inputState == 'validated'"><img src="../../assets/icon-check.svg" alt=""></span>
+        <span v-if="errorMessage"><img src="../../assets/icon-danger.svg" alt=""></span>
+        <span v-if="meta.valid"><img src="../../assets/icon-check.svg" alt=""></span>
         <label>{{ label }}</label>
-        <ErrorMessage v-if="inputState == 'error'" class="msg-feedback" :name="name" />
+        <p v-show="errorMessage" class="msg-feedback" :name="name">: {{ errorMessage }}</p>
       </div>
-      <Field :name="name" :placeholder="placeholder" :type="type" :rules="validationRules" />
+      <input :name="name" :placeholder="placeholder" :type="type" :value="inputValue" @input="handleChange" @blur="handleBlur" />
     </div>
   </div>
 </template>
 
 <script>
-import { Field, ErrorMessage } from 'vee-validate';
-import { reactive, computed } from 'vue';
+import { useField } from 'vee-validate';
 
 export default {
   name: 'TextField',
-
-  components: {
-    Field,
-    ErrorMessage,
-  },
 
   props: {
     label: {
@@ -43,26 +37,28 @@ export default {
       type: Boolean,
       required: false,
     },
-    inputState: {
+    value: {
       type: String,
-      validator: function (value) {
-        return ['validated', 'error'].indexOf(value) !== -1;
-      },
-    },
-    validationRules: {
-      type: Function,
+      default: "",
     }
   },
 
   setup(props) {
-    props = reactive(props);
+    const {
+      value: inputValue,
+      errorMessage,
+      handleBlur,
+      handleChange,
+      meta,
+    } = useField(props.name, undefined, {
+      initialValue: props.value,
+    });
     return {
-      classes: computed(() => ({
-        'text-field': true,
-        'text-field--disabled': props.disabled,
-        'text-field--validated': props.inputState === "validated",
-        'text-field--error': props.inputState === "error"
-      })),
+      handleChange,
+      handleBlur,
+      errorMessage,
+      inputValue,
+      meta,
     }
   },
 
