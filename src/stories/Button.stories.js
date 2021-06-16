@@ -1,5 +1,4 @@
 import Button from '../components/Button/Button.vue';
-import '../styles/main.scss';
 
 export default {
   title: 'Components/Button',
@@ -33,9 +32,3 @@ Secondary.args = {
   typeButton: 'secondary',
   label: 'Button',
 };
-
-export const Disabled = Template.bind({});
-Disabled.args = {
-  disabled: true,
-  label: 'Button',
-}

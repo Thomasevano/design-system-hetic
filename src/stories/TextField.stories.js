@@ -1,14 +1,10 @@
 import TextField from '../components/TextField/TextField.vue';
-import '../styles/main.scss';
 
 export default {
   title: 'Components/TextField',
   component: TextField,
   argTypes: {
-    backgroundColor: { control: 'color' },
-    borderColor: { control: 'color' },
     disabled: { checkbox: false },
-    typeInput: { control: { type: 'select', options: ['default', 'disabled', 'focus', 'validated', 'error'] } },
   },
 };
 
@@ -20,22 +16,17 @@ const Template = (args) => ({
     return { args };
   },
   // And then the `args` are bound to your component with `v-bind="args"`
-  template: '<Text-field v-bind="args" />',
+  template: '<TextField label="Email" placeholder="Email" name="email" type="email" />',
 });
 
 export const Default = Template.bind({});
 Default.args = {
-  typeInput: 'default',
   label: 'TextField',
   placeholder: 'Placeholder',
-};
-
-export const Disabled = Template.bind({});
-Disabled.args = {
-  typeInput: 'disabled',
-  label: 'TextField',
-  disabled: true,
-  placeholder: 'Placeholder',
+  name: 'name',
+  type: 'text',
+  disabled: false,
+  value: '',
 };
 
 export const Focus = Template.bind({});

@@ -1,18 +1,18 @@
 <template>
   <div class="form-cta">
     <p class="link-message">{{ message }}</p>
-    <LinkButton :text="linkText" :linkUrl="linkUrl"/>
+    <Link :text="linkText" :url="linkUrl"/>
   </div>
 </template>
 
 <script>
-import LinkButton from '../LinkButton/LinkButton.vue';
+import Link from '../Link/Link.vue';
 
 export default {
   name: 'FormCTA',
 
   components: {
-    LinkButton,
+    Link,
   },
 
   props: {
