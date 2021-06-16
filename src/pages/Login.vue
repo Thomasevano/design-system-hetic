@@ -6,7 +6,7 @@
       <TextField label="Email" placeholder="Email" name="email" type="email"/>
       <TextField label="Password" placeholder="Password" name="password" type="password"/>
       <div class="reset-password-link">
-        <LinkButton text="Reset password" linkUrl="/reset"/>
+        <Link text="Reset password" url="/reset"/>
       </div>
       <Button text="Login" typeButton="primary" />
     </Form>
@@ -17,7 +17,7 @@
 import Button from "../components/Button/Button.vue";
 import TextField from "../components/TextField/TextField.vue";
 import FormCTA from "../components/FormCTA/FormCTA.vue";
-import LinkButton from "../components/LinkButton/LinkButton.vue"
+import Link from "../components/Link/Link.vue";
 import { Form } from 'vee-validate';
 import * as Yup from "yup";
 
@@ -28,7 +28,7 @@ export default {
     TextField,
     FormCTA,
     Form,
-    LinkButton,
+    Link,
   },
 
   setup() {

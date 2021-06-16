@@ -1,4 +1,4 @@
-.link-button {
+.link {
   @include text-2;
   color: $btn-primary-color;
   display: inline-flex;
@@ -13,15 +13,5 @@
     fill: $primary-color;
     bottom: 0.25rem;
     margin-left: $tiny-space;
-  }
-  &__disabled {
-    color: $btn-disabled;
-    svg {
-      fill: $btn-disabled;
-    }
-    &:hover {
-      border-bottom: 0px;
-    }
-    cursor: not-allowed;
   }
 }
