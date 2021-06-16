@@ -12,6 +12,15 @@ html {
   font-family: $main-font;
 }
 
+
+.link-message {
+  @include text-2;
+  display: inline-block;
+  margin-right: $small-space;
+  margin-top: 2*$small-space;
+  margin-bottom: 2*$small-space;
+}
+
 .home {
   display: flex;
   flex-direction: column;

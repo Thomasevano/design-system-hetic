@@ -2,7 +2,9 @@
   <div class="form-page">
     <h1 class="title">S'inscrire</h1>
     <Form class="register-form" @submit="onSubmit" :validation-schema="registerSchema">
-      <FormCTA message="Already got an account ?" linkText="Sign in" linkUrl="/login" />
+      <span>
+        <p class="link-message">Already got an account ?</p><Link text="Sign in" url="/login" />
+      </span>
       <TextField label="Email" placeholder="Email" name="email" type="email"/>
       <TextField label="Password" placeholder="Password" name="password" type="password"/>
       <TextField label="Confirm password" placeholder="Confirm your password" name="confirmPassword" type="password"/>
@@ -14,7 +16,6 @@
 <script>
 import Button from "../components/Button/Button.vue";
 import TextField from "../components/TextField/TextField.vue";
-import FormCTA from "../components/FormCTA/FormCTA.vue";
 import { Form } from 'vee-validate';
 import * as Yup from "yup";
 
@@ -24,7 +25,6 @@ export default {
   components: {
     Button,
     TextField,
-    FormCTA,
     Form,
   },
 
