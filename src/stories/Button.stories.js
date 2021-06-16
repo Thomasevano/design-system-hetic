@@ -24,11 +24,11 @@ const Template = (args) => ({
 export const Primary = Template.bind({});
 Primary.args = {
   typeButton: 'primary',
-  label: 'Button',
+  text: 'Button',
 };
 
 export const Secondary = Template.bind({});
 Secondary.args = {
   typeButton: 'secondary',
-  label: 'Button',
+  text: 'Button',
 };
